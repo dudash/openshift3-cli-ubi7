@@ -15,8 +15,7 @@ RUN curl -sLo /tmp/oc.tar.gz https://mirror.openshift.com/pub/openshift-v3/clien
     rm -rf /tmp/oc.tar.gz
 RUN oc version
 
-ADD entrypoint.sh .
 COPY ./entrypoint.sh /
 
 USER 1001
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
