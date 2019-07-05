@@ -19,3 +19,6 @@ COPY ./entrypoint.sh /
 
 USER 1001
 ENTRYPOINT ["/entrypoint.sh"]
+
+# default CMD to keep this alive in OpenShift
+CMD ["sh", "-c", "tail -f /dev/null"]
